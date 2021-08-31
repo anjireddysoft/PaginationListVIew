@@ -26,10 +26,13 @@ class ApiProvider {
       throw Exception('Failed to load album');
     }
   }
-
+// Sir this method written for post call but iam getting correct service if i
+// get correct service just uncommenting the commenting code in the bellow method
   Future<List<BookingModel>> createBooking( ) async {
    /* var map = {
       'title': "title",
+      "Id":id,
+      "UserId":userId
     };
 
     var jsonBody = json.encode(map);*/

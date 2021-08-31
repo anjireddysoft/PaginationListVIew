@@ -24,28 +24,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  AlbumBloc albumBloc = AlbumBloc();
-  TabController tabController;
-  ScrollController _controller = ScrollController();
-  List<String> imageList = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIt4Q0VOjUFneCcGNP3g9YWFZ1Guk3mQbjJQ&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqCN8PM4CErA21v510IzAPaZHOE-goO2ZCXg&usqp=CAU",
-    "https://img.freepik.com/free-photo/spa-massage-concept-herbal-compress-ball-cream-flower-soap-scented-candle_73344-3118.jpg?size=626&ext=jpg"
-   ];
+
   @override
   void initState() {
-    albumBloc.fetchAlbumsListData();
 
-    _controller.addListener(() {
-      if (_controller.offset >= _controller.position.maxScrollExtent &&
-          !_controller.position.outOfRange) {
-        showToast("Reach the bottom");
-      }
-      if (_controller.offset <= _controller.position.minScrollExtent &&
-          !_controller.position.outOfRange) {
-        showToast("Reach the top");
-      }
-    });
     // TODO: implement initState
     super.initState();
   }
@@ -78,14 +60,5 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  showToast(String message) {
-    Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0);
-  }
+
 }

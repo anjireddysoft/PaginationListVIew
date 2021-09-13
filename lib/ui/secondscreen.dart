@@ -22,51 +22,70 @@ class _SecondScreenState extends State<SecondScreen> {
         appBar: AppBar(
           title: Text("SecondScreen"),
         ),
-        body: Container(
-          padding: EdgeInsets.all(15),
-          child: Column(
-            children: [
-            Expanded(
+        body: Stack(
+          children: [
+            Container(
+              padding: EdgeInsets.all(15),
+              child: Column(
+                children: [
+                Expanded(
 
-              child: ListView.builder(itemCount:comicModel.length,shrinkWrap:true,itemBuilder: (context,index){
-                return Card(
-                  elevation: 5,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Image.network(comicModel[index].img),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-
-
-                        ExpansionTile(
-                          title: Text(comicModel[index].title),
+                  child: ListView.builder(itemCount:comicModel.length,shrinkWrap:true,itemBuilder: (context,index){
+                    return Card(
+                      elevation: 5,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
                           children: [
-                            Row(
+                            Container(
+                              child: Image.network(comicModel[index].img),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+
+
+                            ExpansionTile(
+                              title: Text(comicModel[index].title),
                               children: [
-                                Expanded(child: Text(comicModel[index].transcript)),
+                                Row(
+                                  children: [
+                                    Expanded(child: Text(comicModel[index].transcript)),
+                                  ],
+                                )
                               ],
+                              expandedAlignment: Alignment.bottomLeft,
                             )
                           ],
-                          expandedAlignment: Alignment.bottomLeft,
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                    );
+                  }),
+                )
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: FloatingActionButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                child: Icon(Icons.arrow_back),
                   ),
-                );
-              }),
-            )
-            ],
-          ),
+            ),
+            Positioned(
+              right: 10,
+              bottom: 10,
+              child: FloatingActionButton(
+
+                child: Icon(Icons.arrow_forward),
+                  ),
+            ),
+          ],
         ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.check),
-          backgroundColor: Colors.blue,
-        ),
+
       ),
     );
   }

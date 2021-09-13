@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:greenpen/bloc/album_bloc.dart';

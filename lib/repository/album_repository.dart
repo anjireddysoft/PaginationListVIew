@@ -1,10 +1,11 @@
 import 'package:greenpen/model/album.dart';
+import 'package:greenpen/model/comic.dart';
 import 'package:greenpen/repository/apiprovider.dart';
 
-class AlbumRepository{
-  ApiProvider apiProvider=ApiProvider();
-  Future<List<Album>>getAlbumList()async{
-    return apiProvider.fetchAlbum();
-  }
+class AlbumRepository {
+  ApiProvider apiProvider = ApiProvider();
 
+  Future<ComicModel> getAlbumList(int index) async {
+    return apiProvider.fetchAlbum(index);
+  }
 }

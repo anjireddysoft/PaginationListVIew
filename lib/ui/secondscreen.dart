@@ -21,6 +21,13 @@ class _SecondScreenState extends State<SecondScreen> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("SecondScreen"),
+          leading: IconButton(
+            color: Colors.white,
+            icon:Icon (Icons.arrow_back),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
         ),
         body: Stack(
           children: [

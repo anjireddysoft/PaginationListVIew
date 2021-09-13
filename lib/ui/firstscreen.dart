@@ -2,20 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:greenpen/bloc/album_bloc.dart';
-import 'package:greenpen/model/album.dart';
+
 import 'package:greenpen/model/comic.dart';
 
 import 'package:greenpen/ui/secondscreen.dart';
 
-class FaceMassage extends StatefulWidget {
-  const FaceMassage({Key key}) : super(key: key);
+class FirstScreen extends StatefulWidget {
+  const FirstScreen({Key key}) : super(key: key);
 
   @override
-  _FaceMassageState createState() => _FaceMassageState();
+  _FirstScreenState createState() => _FirstScreenState();
 }
 
-class _FaceMassageState extends State<FaceMassage> {
-  List<Album>albumList=[];
+class _FirstScreenState extends State<FirstScreen> {
+
   AlbumBloc albumBloc = AlbumBloc();
    List<ComicModel> comicModel;
   ScrollController _controller = ScrollController();

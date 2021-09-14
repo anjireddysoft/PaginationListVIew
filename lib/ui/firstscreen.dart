@@ -122,19 +122,18 @@ class _FirstScreenState extends State<FirstScreen> {
                                                       ),
                                                     ],
                                                   ),
-                                                  Expanded(
-                                                    child: Row(
-                                                      children: [
-                                                        Expanded(
-                                                          child: Text(
-                                                            snapshot
-                                                                .data[index].alt,
-                                                            style: TextStyle(
-                                                                fontSize: 12),
-                                                          ),
+                                                  SizedBox(height: 5,),
+                                                  Row(
+                                                    children: [
+                                                      Expanded(
+                                                        child: Text(
+                                                          snapshot
+                                                              .data[index].alt,
+                                                          style: TextStyle(
+                                                              fontSize: 12),
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                    ],
                                                   ),
                                                   /* Expanded(
                                                     child: Row(

@@ -45,12 +45,11 @@ class _SecondScreenState extends State<SecondScreen> {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.network(comicModel[index].img),
+                              child: ConstrainedBox(child: Image.network(comicModel[index].img),constraints: BoxConstraints(minHeight: 200),),
                             ),
                             SizedBox(
                               height: 5,
                             ),
-
 
                             ExpansionTile(
                               title: Text(comicModel[index].title),
